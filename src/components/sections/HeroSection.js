@@ -1,8 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import { H1, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
+import ButtonIcon from "../buttons/ButtonIcon"
+import { Link } from "gatsby"
 
 function HeroSection() {
   return (
@@ -11,6 +12,12 @@ function HeroSection() {
         <TextWrapper>
           <Title>VƯƠN TẦM BẢN THÂN</Title>
           <Description>BƯỚC ĐI TỰ TIN TRÊN HÀNH TRÌNH 4.0</Description>
+          <Link to="/page-2">
+            <ButtonIcon
+              title="Khoảnh khắc lột xác của đời Sang Lê"
+              subtitle="Xem Ngay"
+            />
+          </Link>
         </TextWrapper>
       </ContentWrapper>
     </Wrapper>
@@ -35,4 +42,6 @@ const TextWrapper = styled.div`
 const Title = styled(H1)`
   color: ${themes.dark.text1};
 `
-const Description = styled(MediumText)``
+const Description = styled(MediumText)`
+  color: ${themes.dark.text1};
+`
