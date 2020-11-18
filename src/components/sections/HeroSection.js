@@ -29,7 +29,8 @@ function HeroSection() {
 export default HeroSection
 
 const Wrapper = styled.div`
-  background: linear-gradient(180deg, #343563 0%, #4926ad 100%);
+  background: url("/images/waves/certificate-lines.svg"),
+    linear-gradient(180deg, #343563 0%, #4926ad 100%);
   margin: 0 auto;
   max-width: 100%;
   padding: 250px 100px;
