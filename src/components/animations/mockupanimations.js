@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   }
 
   div {
-    transform: rotateX(20deg) rotateY(20deg);
+    transform: rotateY(10deg) rotateX(20deg);
     transform-origin: bottom left;
   }
 
