@@ -20,7 +20,7 @@ function HeroSection() {
             />
           </Link>
         </TextWrapper>
-        <MockupAnimation />
+        {/* <MockupAnimation /> */}
       </ContentWrapper>
     </Wrapper>
   )
@@ -29,7 +29,14 @@ function HeroSection() {
 export default HeroSection
 
 const Wrapper = styled.div`
-  background: linear-gradient(180deg, #343563 0%, #4926ad 100%);
+  background: url("/images/background/humanize-nobg.png"),
+    url("/images/waves/course-wave1.svg"), url("/images/waves/course-wave2.svg"),
+    url("/images/waves/course-wave3.svg"),
+    linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right 35% bottom 35%;
+  background-position-y: center, bottom;
   margin: 0 auto;
   max-width: 100%;
   padding: 250px 100px;
