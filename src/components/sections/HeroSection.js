@@ -4,6 +4,7 @@ import { H1, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
 import ButtonIcon from "../buttons/ButtonIcon"
 import { Link } from "gatsby"
+import MockupAnimation from "../animations/mockupanimations"
 
 function HeroSection() {
   return (
@@ -19,6 +20,7 @@ function HeroSection() {
             />
           </Link>
         </TextWrapper>
+        <MockupAnimation />
       </ContentWrapper>
     </Wrapper>
   )
@@ -29,10 +31,14 @@ export default HeroSection
 const Wrapper = styled.div`
   background: linear-gradient(180deg, #343563 0%, #4926ad 100%);
   margin: 0 auto;
-  max-width: 1234px;
-  padding: 200px 30px;
+  max-width: 100%;
+  padding: 250px 100px;
+  overflow: hidden;
 `
-const ContentWrapper = styled.div``
+const ContentWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 360px auto;
+`
 const TextWrapper = styled.div`
   width: 360px;
   display: grid;
