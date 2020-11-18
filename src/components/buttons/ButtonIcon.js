@@ -41,9 +41,12 @@ const Wrapper = styled.div`
       0px 30px 60px rgba(23, 0, 102, 0.5),
       inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
 
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-
     transform: translateY(-3px);
+
+    *,
+    & {
+      transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
   }
 `
 const TextWrapper = styled.div`
@@ -65,13 +68,20 @@ const IconWrapper = styled.div`
 
   background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
   box-shadow: 0px 10px 20px rgba(182, 153, 255, 0.3);
+
+  ${Wrapper}:hover & {
+    filter: hue-rotate(10deg) brightness(150%);
+  }
 `
 const IconRing = styled.img`
   position: absolute;
   top: -15px;
   left: -16px;
-`
 
+  ${Wrapper} :hover & {
+    transform: rotate(30deg) scale(1.2) translate(1px, 1px);
+  }
+`
 const Icon = styled.img`
   width: 29px;
   height: 29px;
