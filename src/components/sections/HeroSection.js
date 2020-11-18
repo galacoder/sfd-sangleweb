@@ -22,6 +22,9 @@ function HeroSection() {
         </TextWrapper>
         {/* <MockupAnimation /> */}
       </ContentWrapper>
+      <ImageWrapper>
+        <Image src="/images/background/humanize-nobg.png" />
+      </ImageWrapper>
     </Wrapper>
   )
 }
@@ -29,9 +32,8 @@ function HeroSection() {
 export default HeroSection
 
 const Wrapper = styled.div`
-  background: url("/images/background/humanize-nobg.png"),
-    url("/images/waves/course-wave1.svg"), url("/images/waves/course-wave2.svg"),
-    url("/images/waves/course-wave3.svg"),
+  background: url("/images/waves/course-wave1.svg"),
+    url("/images/waves/course-wave2.svg"), url("/images/waves/course-wave3.svg"),
     linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
   background-repeat: no-repeat;
   background-size: contain;
@@ -39,13 +41,32 @@ const Wrapper = styled.div`
   background-position-y: center, bottom;
   margin: 0 auto;
   max-width: 100%;
-  padding: 250px 100px;
+  padding: 100px 100px;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: center;
+  align-items: center;
+`
+
+const ImageWrapper = styled.div`
+  height: 600px;
+  perspective: 5000;
+
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  :hover {
+    transform: rotateX(30deg) rotateY(20deg);
+  }
+`
+
+const Image = styled.img`
+  width: 500px;
 `
 const ContentWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 360px auto;
+  /* display: grid; */
+  /* grid-template-columns: 360px auto; */
 `
+
 const TextWrapper = styled.div`
   width: 360px;
   display: grid;
