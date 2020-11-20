@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { aboutSubmenuData } from "../../data/menuData"
 import MenuButton from "../buttons/MenuButton"
 
-export default function MenuTooltips(props) {
+export default function AboutSubHeader(props) {
   const { isOpen } = props
 
   return (

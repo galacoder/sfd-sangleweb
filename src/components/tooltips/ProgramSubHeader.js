@@ -1,14 +1,14 @@
 import React from "react"
 import styled from "styled-components"
-import { aboutSubmenuData } from "../../data/menuData"
+import { programSubmenuData } from "../../data/menuData"
 import MenuButton from "../buttons/MenuButton"
 
-export default function MenuTooltips(props) {
+export default function ProgramSubHeader(props) {
   const { isOpen } = props
 
   return (
     <Wrapper isOpen={isOpen}>
-      {aboutSubmenuData.map((item, index) => (
+      {programSubmenuData.map((item, index) => (
         <MenuButton item={item} key={index} />
       ))}
     </Wrapper>
@@ -18,7 +18,7 @@ export default function MenuTooltips(props) {
 const Wrapper = styled.div`
   /* Position */
   position: absolute;
-  right: 530px;
+  right: 430px;
   top: 60px;
   z-index: 1;
 
