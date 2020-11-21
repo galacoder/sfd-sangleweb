@@ -6,9 +6,7 @@ import { Link } from "gatsby"
 import AboutSubHeader from "../tooltips/AboutSubHeader"
 import ProgramSubHeader from "../tooltips/ProgramSubHeader"
 
-// TODO I needa figure out how to fix the submenu error. When I hit the about, program submenu is about and vice versa.
-//1. I think the solution to fix this issue is to create MenuToolTip component which can receive props from about or program button. For example, I will receive a specific props (about menu open or program menu open) to open a specific menu
-// (First Priority) 2. To figure out how to fix based the about and program component that are created by me already. Then, after fixed them, I will refractor them into another component that can handle all of the submenu
+// TODO The submenus are working but pretty complicated right now. I needa think of a way to refractor the code. Probably, think of creating a menutooltip template and somehow it can have a props to switch between the submenu.
 
 export default function Header() {
   const [aboutSubmenuIsOpen, aboutSubmenuSetIsOpen] = useState(false)
