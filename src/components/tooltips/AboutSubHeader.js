@@ -4,10 +4,10 @@ import { aboutSubmenuData } from "../../data/menuData"
 import MenuButton from "../buttons/MenuButton"
 
 export default function AboutSubHeader(props) {
-  const { isOpen } = props
+  const { aboutSubmenuIsOpen } = props
 
   return (
-    <Wrapper isOpen={isOpen}>
+    <Wrapper isOpen={aboutSubmenuIsOpen}>
       {aboutSubmenuData.map((item, index) => (
         <MenuButton item={item} key={index} />
       ))}

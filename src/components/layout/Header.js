@@ -6,13 +6,24 @@ import { Link } from "gatsby"
 import AboutSubHeader from "../tooltips/AboutSubHeader"
 import ProgramSubHeader from "../tooltips/ProgramSubHeader"
 
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+// TODO I needa figure out how to fix the submenu error. When I hit the about, program submenu is about and vice versa.
+//1. I think the solution to fix this issue is to create MenuToolTip component which can receive props from about or program button. For example, I will receive a specific props (about menu open or program menu open) to open a specific menu
+// (First Priority) 2. To figure out how to fix based the about and program component that are created by me already. Then, after fixed them, I will refractor them into another component that can handle all of the submenu
 
-  function MenuButtonOnClickHandle(event) {
-    setIsOpen(!isOpen)
+export default function Header() {
+  const [aboutSubmenuIsOpen, aboutSubmenuSetIsOpen] = useState(false)
+  const [programSubmenuIsOpen, programeSubmenuSetIsOpen] = useState(false)
+
+  function AboutMenuButtonOnClickHandle(event) {
+    aboutSubmenuSetIsOpen(!aboutSubmenuIsOpen)
+    programeSubmenuSetIsOpen(false)
     event.preventDefault()
-    console.log(event)
+  }
+
+  function ProgramMenuButtonOnClickHandle(event) {
+    programeSubmenuSetIsOpen(!programSubmenuIsOpen)
+    aboutSubmenuSetIsOpen(false)
+    event.preventDefault()
   }
 
   return (
@@ -21,20 +32,30 @@ export default function Header() {
         <Logo src="/images/logos/sangletech-logo.png" />
       </Link>
       <MenuWrapper count={menuData.length}>
-        {menuData.map((item, index) =>
-          item.link === "/sang-le-la-ai" || "/chuong-trinh" ? (
-            <MenuButton
-              item={item}
-              key={index}
-              onClick={event => MenuButtonOnClickHandle(event)}
-            />
-          ) : (
-            <MenuButton item={item} key={index} />
-          )
-        )}
+        {menuData.map((item, index) => {
+          if (item.link === "/sang-le-la-ai") {
+            return (
+              <MenuButton
+                item={item}
+                key={index}
+                onClick={event => AboutMenuButtonOnClickHandle(event)}
+              />
+            )
+          } else if (item.link === "/chuong-trinh") {
+            return (
+              <MenuButton
+                item={item}
+                key={index}
+                onClick={event => ProgramMenuButtonOnClickHandle(event)}
+              />
+            )
+          } else {
+            return <MenuButton item={item} key={index} />
+          }
+        })}
       </MenuWrapper>
-      <AboutSubHeader isOpen={isOpen} />
-      <ProgramSubHeader isOpen={isOpen} />
+      <AboutSubHeader aboutSubmenuIsOpen={aboutSubmenuIsOpen} />
+      <ProgramSubHeader programSubmenuIsOpen={programSubmenuIsOpen} />
     </Wrapper>
   )
 }

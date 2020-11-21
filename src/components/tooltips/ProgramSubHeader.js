@@ -4,10 +4,10 @@ import { programSubmenuData } from "../../data/menuData"
 import MenuButton from "../buttons/MenuButton"
 
 export default function ProgramSubHeader(props) {
-  const { isOpen } = props
+  const { programSubmenuIsOpen } = props
 
   return (
-    <Wrapper isOpen={isOpen}>
+    <Wrapper isOpen={programSubmenuIsOpen}>
       {programSubmenuData.map((item, index) => (
         <MenuButton item={item} key={index} />
       ))}
@@ -18,7 +18,7 @@ export default function ProgramSubHeader(props) {
 const Wrapper = styled.div`
   /* Position */
   position: absolute;
-  right: 430px;
+  right: 350px;
   top: 60px;
   z-index: 1;
 
