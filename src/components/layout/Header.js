@@ -51,6 +51,11 @@ export default function Header() {
             return <MenuButton item={item} key={index} />
           }
         })}
+        <HambugerWrapper>
+          <MenuButton
+            item={{ title: "", icon: "/images/icons/hamburger.svg", link: "" }}
+          />
+        </HambugerWrapper>
       </MenuWrapper>
       <AboutSubHeader aboutSubmenuIsOpen={aboutSubmenuIsOpen} />
       <ProgramSubHeader programSubmenuIsOpen={programSubmenuIsOpen} />
@@ -72,8 +77,23 @@ const Wrapper = styled.div`
 
 const MenuWrapper = styled.div`
   display: grid;
-  gap: 30px;
+  gap: 20px;
   grid-template-columns: repeat(${props => props.count}, auto);
+
+  @media (max-width: 768px) {
+    > a {
+      display: none;
+    }
+    grid-template-columns: auto;
+  }
+`
+
+const HambugerWrapper = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `
 
 const Logo = styled.img`
