@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import { menuData } from "../../data/menuData"
 import MenuButton from "../buttons/MenuButton"
@@ -11,6 +11,28 @@ import ProgramSubHeader from "../tooltips/ProgramSubHeader"
 export default function Header() {
   const [aboutSubmenuIsOpen, aboutSubmenuSetIsOpen] = useState(false)
   const [programSubmenuIsOpen, programeSubmenuSetIsOpen] = useState(false)
+
+  function handleClickOutside(event) {
+    if (
+      MenuWrapperRef.current &&
+      !MenuWrapperRef.current.contains(event.target)
+    ) {
+      console.log("Document is Click")
+      aboutSubmenuSetIsOpen(false)
+      programeSubmenuSetIsOpen(false)
+    }
+  }
+
+  // Use Ref to define the component
+  const MenuWrapperRef = useRef()
+
+  // Click outside to close the submenu or menu tooltip
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
 
   function AboutMenuButtonOnClickHandle(event) {
     aboutSubmenuSetIsOpen(!aboutSubmenuIsOpen)
@@ -29,7 +51,7 @@ export default function Header() {
       <Link to="/">
         <Logo src="/images/logos/sangletech-logo.png" />
       </Link>
-      <MenuWrapper count={menuData.length}>
+      <MenuWrapper count={menuData.length} ref={MenuWrapperRef}>
         {menuData.map((item, index) => {
           if (item.link === "/sang-le-la-ai") {
             return (
@@ -53,7 +75,8 @@ export default function Header() {
         })}
         <HambugerWrapper>
           <MenuButton
-            item={{ title: "", icon: "/images/icons/hamburger.svg", link: "" }}
+            item={{ title: "", icon: "/images/icons/hamburger.svg", link: "/" }}
+            onClick={event => AboutMenuButtonOnClickHandle(event)}
           />
         </HambugerWrapper>
       </MenuWrapper>
