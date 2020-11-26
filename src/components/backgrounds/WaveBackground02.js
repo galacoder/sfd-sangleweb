@@ -15,7 +15,13 @@ export default function WaveBackground02() {
 
 const Wrapper = styled.div`
   position: relative;
+  @media (max-width: 450px) {
+    width: 1676px;
+    height: 500.47px;
+    left: 0px;
+  }
 `
+
 const Background = styled.img`
   width: 100%;
   position: absolute;
@@ -26,12 +32,19 @@ const Background02 = styled.img`
   width: 100%;
   position: absolute;
   top: 450px;
+  @media (max-width: 450px) {
+    visibility: hidden;
+    /* opacity: 0; */
+  }
 `
 
 const Background03 = styled.img`
   width: 100%;
   position: absolute;
   top: 250px;
+  @media (max-width: 450px) {
+    display: hidden;
+  }
 `
 
 const Circle01 = styled.div`

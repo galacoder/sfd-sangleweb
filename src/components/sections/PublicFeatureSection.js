@@ -44,6 +44,15 @@ const ContentWrapper = styled.div`
 
   left: 113px;
   top: 200px;
+
+  @media (max-width: 450px) {
+    display: grid;
+    grid-template-columns: auto;
+    left: 0px;
+    padding: 20px;
+    top: 100px;
+    gap: 20px;
+  }
 `
 const TextWrapper = styled.div`
   display: grid;
