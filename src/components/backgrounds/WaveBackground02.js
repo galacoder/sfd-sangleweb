@@ -7,8 +7,8 @@ export default function WaveBackground02() {
       <Circle01 />
       <Circle02 />
       <Background src="/images/waves/courses-wave1-light.svg" />
-      <Background02 src="/images/waves/hero-wave3.svg" />
       <Background03 src="/images/animations/wavelines-1.svg" />
+      <Background02 src="/images/waves/hero-wave3.svg" />
     </Wrapper>
   )
 }
@@ -25,23 +25,15 @@ const Wrapper = styled.div`
 const Background = styled.img`
   width: 100%;
   position: absolute;
-  z-index: -1;
-`
 
-const Background02 = styled.img`
-  width: 100%;
-  position: absolute;
-  top: 450px;
-  @media (max-width: 450px) {
-    visibility: hidden;
-    /* opacity: 0; */
-  }
+  z-index: -1;
 `
 
 const Background03 = styled.img`
   width: 100%;
   position: absolute;
   top: 250px;
+
   @media (max-width: 450px) {
     display: hidden;
   }
@@ -83,4 +75,14 @@ const Circle02 = styled.div`
     #3913b8 100%
   );
   mix-blend-mode: hard-light;
+`
+const Background02 = styled.img`
+  width: 100%;
+  position: absolute;
+  top: 450px;
+
+  @media (max-width: 450px) {
+    visibility: hidden;
+    /* opacity: 0; */
+  }
 `

@@ -4,26 +4,27 @@ import WaveBackground02 from "../backgrounds/WaveBackground02"
 import { Caption2, H2, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
 
-export default function PublicFeatureSection() {
+export default function BusinessSection() {
   return (
     <Wrapper>
       <ContentWrapper>
         <TextWrapper>
-          <Caption>Công nghiệp 4.0</Caption>
-          <Title>Phát Triển Bản Thân & Doanh Nghiệp</Title>
+          <Caption>7 Tuần chất như nước cất</Caption>
+          <Title>Khóa Học Kinh Doanh 4.0</Title>
           <Description>
-            Sang chia sẻ chiến lược và phương pháp mà bạn có thể áp dụng trong
-            cuộc sống và công việc. Để bạn đạt được những ước mơ, sự giàu có,
-            thành công và bản lĩnh trên hành trình 4.0.
+            Sau hơn 10 năm hoạt động kinh doanh ở nhiều lĩnh vực khác nhau, tổn
+            thất hàng trăm ngàn đô la và nhiều đêm mất ngủ, Sang Lê đã học được
+            vô số bài học đắt giá để có thể giúp bạn XÂY DỰNG ƯỚC MƠ KHỞI
+            NGHIỆP.
           </Description>
         </TextWrapper>
-        <FeatureLogos>
+        <Certificates>
           <Logo01 src="images/companies/airbnb.svg" />
           <Logo01 src="images/companies/airbnb.svg" />
           <Logo01 src="images/companies/airbnb.svg" />
           <Logo01 src="images/companies/airbnb.svg" />
           <Logo01 src="images/companies/airbnb.svg" />
-        </FeatureLogos>
+        </Certificates>
       </ContentWrapper>
       <WaveBackground02 />
     </Wrapper>
@@ -33,6 +34,7 @@ export default function PublicFeatureSection() {
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  top: 600px;
 `
 const ContentWrapper = styled.div`
   position: absolute;
@@ -70,7 +72,7 @@ const Description = styled(MediumText)`
   color: ${themes.dark.text1};
   opacity: 0.7;
 `
-const FeatureLogos = styled.div``
+const Certificates = styled.div``
 
 const Logo01 = styled.img`
   transform: scale(0.8);
