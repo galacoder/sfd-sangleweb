@@ -2,7 +2,8 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import ButtonIcon from "../buttons/ButtonIcon"
-import { BodyMain, Caption, H2, H3, MediumText } from "../styles/TextStyles"
+import { Caption, Caption2, H2, MediumText } from "../styles/TextStyles"
+import { themes } from "../styles/ColorStyles"
 
 //TODO Needa think how to have a custom Youtube player with overlay image here: https://www.npmjs.com/package/react-image-video-lightbox
 
@@ -16,21 +17,16 @@ export default function WarriorSection() {
       <ContentWrapper>
         <TextWrapper>
           <HeaderWrapper>
-            <Title>Thử một lần chơi lớn, xem ai có trầm trồ?</Title>
-            <Subtitle>
-              Vừa tham gia chương trình Chiến Binh X.0 vừa có cơ hội nhận được
-              iPhone 12 HOT nhất hiện nay! Bạn nghĩ sao?
-            </Subtitle>
+            <Title>Warrior X.0</Title>
+            <Subtitle></Subtitle>
           </HeaderWrapper>
           <Description>
             Trong Chiến Binh X.0, bạn sẽ tìm thấy các chiến lược và phương pháp
             mà Sang Lê đã sử dụng trong suốt hành trình lột xác bản thân để từ
-            một học sinh nghiện game trở thành CEO như ngày hôm nay.
-            <span>
-              Không quan trọng bạn đang ở vị trí nào trong cuộc sống. Quan trọng
-              là bạn có dám thử chơi một trò chơi lớn hơn trong cuộc đời và khám
-              phá những gì còn ẩn sâu bên trong chính con người mình hay không!
-            </span>
+            một học sinh nghiện game trở thành CEO như ngày hôm nay. Không quan
+            trọng bạn đang ở vị trí nào trong cuộc sống. Quan trọng là bạn có
+            dám thử chơi một trò chơi lớn hơn trong cuộc đời và khám phá những
+            gì còn ẩn sâu bên trong chính con người mình hay không!
           </Description>
           <Link to="/">
             <ButtonIcon title="Tìm Hiểu Thêm" subtitle="Còn chần chờ gì nữa?" />
@@ -48,7 +44,10 @@ export default function WarriorSection() {
               height="300px"
             />
           </VideoFrame>
-          <VideoTitle>Chộp Ngay iPhone 12</VideoTitle>
+          <VideoTitle>
+            Vừa tham gia chương trình Chiến Binh X.0 vừa có cơ hội nhận được
+            iPhone 12 HOT nhất hiện nay! Bạn nghĩ sao?
+          </VideoTitle>
         </VideoWrapper>
       </ContentWrapper>
     </Wrapper>
@@ -62,11 +61,12 @@ const Wrapper = styled.div`
   width: 100%;
 `
 const ContentWrapper = styled.div`
-  display: grid;
-  padding-top: 100px;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  padding: 100px;
+  gap: 88px;
 `
 const TextWrapper = styled.div`
   display: grid;
@@ -83,7 +83,7 @@ const HeaderWrapper = styled.div`
 
 const Title = styled(H2)`
   text-transform: capitalize;
-  line-height: 50px;
+  color: ${themes.light.text1};
 `
 const Subtitle = styled(Caption)`
   color: gray;
@@ -101,6 +101,6 @@ const VideoWrapper = styled.div`
 const VideoFrame = styled.div`
   width: 500px;
 `
-const VideoTitle = styled(H3)`
-  text-shadow: 5px 8px 15px black;
+const VideoTitle = styled(Caption2)`
+  text-align: center;
 `

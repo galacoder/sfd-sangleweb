@@ -3,6 +3,7 @@ import styled from "styled-components"
 import WaveBackground02 from "../backgrounds/WaveBackground02"
 import { Caption2, H2, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
+import FullCard from "../card/FullCard"
 
 export default function BusinessSection() {
   return (
@@ -27,6 +28,24 @@ export default function BusinessSection() {
         </Certificates>
       </ContentWrapper>
       <WaveBackground02 />
+      <Courses>
+        <FullCard
+          title="xây dựng khởi nghiệp của bạn từ A-Z và marketing ra thị trường"
+          description="XÂY DỰNG ƯỚC MƠ KHỞI NGHIỆP, và bước trên CON ĐƯỜNG NGẮN NHẤT đến
+              sự thành công trong thời đại 4.0."
+          illustration="/images/illustration/startupx0-illustration.svg"
+          link="/startupX0"
+          miniCardbackgroundColor="linear-gradient(209.21deg, rgb(200, 255, 222) 13.57%, rgb(53, 142, 239) 98.38%)"
+        />
+        <FullCard
+          title="xây dựng phễu Marketing “đẻ ra tiền"
+          description="Nếu bạn đang loay hoay tìm ra câu trả lời cho việc kinh doanh của bạn đang rơi vào tình trạng trì trệ thì chương trình Funnel X.0 sẽ giúp cho doanh nghiệp của bạn."
+          illustration="/images/illustration/funnelx0-illustration.svg"
+          miniCardTitle="Funnel X.0"
+          miniCardbackgroundColor="linear-gradient(209.21deg, rgb(159, 127, 229) 13.57%, rgb(78, 153, 227) 98.38%);"
+          link="/funnelX0"
+        />
+      </Courses>
     </Wrapper>
   )
 }
@@ -76,4 +95,14 @@ const Certificates = styled.div``
 
 const Logo01 = styled.img`
   transform: scale(0.8);
+`
+
+const Courses = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  gap: 30px;
+  top: 200px;
 `
