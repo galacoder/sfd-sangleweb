@@ -5,6 +5,7 @@ import BusinessSection from "../components/sections/BussinessSection"
 import HeroSection from "../components/sections/HeroSection"
 import PublicFeatureSection from "../components/sections/PublicFeatureSection"
 import WarriorSection from "../components/sections/WarriorSection"
+import YoutubeSection from "../components/sections/YoutubeSection"
 
 function IndexPage() {
   return (
@@ -14,6 +15,7 @@ function IndexPage() {
       <PublicFeatureSection />
       <WarriorSection />
       <BusinessSection />
+      <YoutubeSection />
     </Layout>
   )
 }

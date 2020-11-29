@@ -43,19 +43,6 @@ const Wrapper = styled.div`
   left: 100px;
 `
 
-/*
-position: relative;
-    display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 20px;
-    width: 586px;
-    height: 400px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.6);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px inset;
-    border-radius: 20px;
-*/
-
 const Background = styled.div`
   width: 586px;
   height: 400px;

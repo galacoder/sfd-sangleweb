@@ -6,8 +6,9 @@ export const GlobalStyle = createGlobalStyle`
     background: ${themes.light.backgroundColor};
     @media (prefers-color-scheme: dark) {
   background: ${themes.dark.backgroundColor}
-
 }
+  display: grid; 
+  grid-template-columns: 1fr;
 
   }
 `

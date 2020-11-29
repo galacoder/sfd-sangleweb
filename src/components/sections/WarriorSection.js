@@ -84,12 +84,18 @@ const HeaderWrapper = styled.div`
 const Title = styled(H2)`
   text-transform: capitalize;
   color: ${themes.light.text1};
+  @media (prefers-color-scheme: dark) {
+    color: ${themes.dark.text1};
+  }
 `
 const Subtitle = styled(Caption)`
   color: gray;
 `
 const Description = styled(MediumText)`
   line-height: 30px;
+  @media (prefers-color-scheme: dark) {
+    color: ${themes.dark.text1};
+  }
 `
 const VideoWrapper = styled.div`
   width: 500px;
