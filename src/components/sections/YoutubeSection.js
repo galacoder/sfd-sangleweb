@@ -7,7 +7,7 @@ export default function YoutubeSection() {
       <TestimonialWrapper>
         <Testimonial>
           <Avatar />
-          <Name>Name </Name>
+          <Name>Just changed the Name </Name>
           <Position>Position</Position>
           <Comment>Comment</Comment>
         </Testimonial>
