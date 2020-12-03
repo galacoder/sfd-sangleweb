@@ -21,6 +21,7 @@ const Wrapper = styled.div`
   /* Animation */
   transition: 3s cubic-bezier(0.075, 0.82, 0.165, 1);
   border-radius: 20px;
+
   :hover {
     transform: scale(1.1);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
