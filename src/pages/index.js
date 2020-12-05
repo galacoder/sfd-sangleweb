@@ -6,6 +6,7 @@ import HeroSection from "../components/sections/HeroSection"
 import PublicFeatureSection from "../components/sections/PublicFeatureSection"
 import WarriorSection from "../components/sections/WarriorSection"
 import YoutubeSection from "../components/sections/YoutubeSection"
+import BlogSection from "../components/sections/BlogSection"
 
 function IndexPage() {
   return (
@@ -16,6 +17,7 @@ function IndexPage() {
       <WarriorSection />
       <BusinessSection />
       <YoutubeSection />
+      <BlogSection />
     </Layout>
   )
 }

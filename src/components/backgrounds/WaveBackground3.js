@@ -6,6 +6,7 @@ export default function WaveBackground3() {
 }
 
 const Wrapper = styled.img`
+  top: 150px;
   z-index: -1;
   position: absolute;
 `
