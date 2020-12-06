@@ -7,6 +7,7 @@ import PublicFeatureSection from "../components/sections/PublicFeatureSection"
 import WarriorSection from "../components/sections/WarriorSection"
 import YoutubeSection from "../components/sections/YoutubeSection"
 import BlogSection from "../components/sections/BlogSection"
+import Footer from "../components/layout/Footer"
 
 function IndexPage() {
   return (
@@ -18,6 +19,7 @@ function IndexPage() {
       <BusinessSection />
       <YoutubeSection />
       <BlogSection />
+      <Footer />
     </Layout>
   )
 }
