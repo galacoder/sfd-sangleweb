@@ -8,7 +8,7 @@ export const blogData = [
     link: "/blog-1",
   },
   {
-    title: "Title2 ",
+    title: "Title2",
     caption: "caption",
     author: "Author",
     imgSrc: "",

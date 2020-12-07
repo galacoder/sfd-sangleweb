@@ -15,7 +15,7 @@ export default function Footer() {
         {menuData.map((item, index) => {
           return <MenuButton item={item} title={item.title} key={index} />
         })}
-
+        //TODO Fix why the menu didn't show on top
         <CopyRight>Copywriting</CopyRight>
       </MenuWrapper>
       <BackgroundWrapper>

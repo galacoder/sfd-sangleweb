@@ -37,9 +37,12 @@ const Wrapper = styled.div`
   gap: 10px;
 
   width: 366px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   /* Note: backdrop-filter has minimal browser support */
 
   border-radius: 20px;
