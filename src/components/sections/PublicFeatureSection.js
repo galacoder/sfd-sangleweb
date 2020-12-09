@@ -3,6 +3,7 @@ import styled from "styled-components"
 import WaveBackground02 from "../backgrounds/WaveBackground02"
 import { Caption2, H2, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
+import FeaturedLogos from "../misc/FeaturedLogos"
 
 export default function PublicFeatureSection() {
   return (
@@ -17,13 +18,7 @@ export default function PublicFeatureSection() {
             thành công và bản lĩnh trên hành trình 4.0.
           </Description>
         </TextWrapper>
-        <FeatureLogos>
-          <Logo01 src="images/companies/airbnb.svg" />
-          <Logo01 src="images/companies/airbnb.svg" />
-          <Logo01 src="images/companies/airbnb.svg" />
-          <Logo01 src="images/companies/airbnb.svg" />
-          <Logo01 src="images/companies/airbnb.svg" />
-        </FeatureLogos>
+        <FeaturedLogos />
       </ContentWrapper>
       <WaveBackground02 />
     </Wrapper>
@@ -70,7 +65,6 @@ const Description = styled(MediumText)`
   color: ${themes.dark.text1};
   opacity: 0.7;
 `
-const FeatureLogos = styled.div``
 
 const Logo01 = styled.img`
   transform: scale(0.8);

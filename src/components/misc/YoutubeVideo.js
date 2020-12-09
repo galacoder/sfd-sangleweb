@@ -12,7 +12,6 @@ export default function YoutubeVideo(props) {
             <Thumbnail
               src={props.thumbnailSrc || "images/background/background01.jpeg"}
             />
-
             <PlayIconWrapper>
               <PlayIcon src="/images/icons/play.svg" />
               <PlayRing src="/images/icons/progress.svg" />

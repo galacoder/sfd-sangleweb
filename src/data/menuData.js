@@ -1,5 +1,9 @@
 export const menuData = [
-  { title: "Trang Chủ", icon: "/images/icons/home.svg", link: "/trang-chu" },
+  {
+    title: "Trang Chủ",
+    icon: "/images/icons/home.svg",
+    link: "/trang-chu",
+  },
   {
     title: "Sang Lê là ai?",
     icon: "/images/icons/help.svg ",

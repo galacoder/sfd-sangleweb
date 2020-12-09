@@ -4,7 +4,7 @@ import WaveBackground02 from "../backgrounds/WaveBackground02"
 import { Caption2, H2, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
 import FullCard from "../card/FullCard"
-
+import Certificates from "../misc/Certificates"
 export default function BusinessSection() {
   return (
     <Wrapper>
@@ -19,15 +19,16 @@ export default function BusinessSection() {
             NGHIỆP.
           </Description>
         </TextWrapper>
-        <Certificates>
-          <Logo01 src="images/companies/airbnb.svg" />
-          <Logo01 src="images/companies/airbnb.svg" />
-          <Logo01 src="images/companies/airbnb.svg" />
-          <Logo01 src="images/companies/airbnb.svg" />
-          <Logo01 src="images/companies/airbnb.svg" />
-        </Certificates>
+        <CertificateWrapper>
+          <Certificates />
+        </CertificateWrapper>
       </ContentWrapper>
-      <WaveBackground02 />
+      <WaveBackground02
+        background01="images/waves/courses-wave1.svg"
+        background02=""
+        background03=""
+        circleVisiable="hidden"
+      />
       <Courses>
         <FullCard
           title="xây dựng khởi nghiệp của bạn từ A-Z và marketing ra thị trường"
@@ -59,12 +60,10 @@ const ContentWrapper = styled.div`
   position: absolute;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  justify-content: center;
-  align-items: center;
   gap: 60px;
 
-  left: 113px;
   top: 150px;
+  left: 150px;
 
   @media (max-width: 450px) {
     display: grid;
@@ -91,11 +90,7 @@ const Description = styled(MediumText)`
   color: ${themes.dark.text1};
   opacity: 0.7;
 `
-const Certificates = styled.div``
-
-const Logo01 = styled.img`
-  transform: scale(0.8);
-`
+const CertificateWrapper = styled.div``
 
 const Courses = styled.div`
   display: flex;

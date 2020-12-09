@@ -7,8 +7,8 @@ export default function MenuButton(props) {
   const { item } = props
 
   return (
-    <Link to={item.link} onClick={props.onClick}>
-      <MenuItem title={item.title}>
+    <Link to={item.link} onClick={item.onClick}>
+      <MenuItem title={item.title} textColor={item.textColor}>
         <img src={item.icon} alt={item.title} />
         {item.title}
       </MenuItem>
@@ -18,7 +18,7 @@ export default function MenuButton(props) {
 
 const MenuItem = styled(Caption)`
   /* Visual */
-  color: rgba(255, 255, 255, 0.7);
+  color: ${props => props.textColor || "rgba(255, 255, 255, 0.7)"};
   border-radius: 10px;
 
   /* Positioning */

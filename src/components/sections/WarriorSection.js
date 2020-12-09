@@ -4,6 +4,7 @@ import styled from "styled-components"
 import ButtonIcon from "../buttons/ButtonIcon"
 import { Caption, Caption2, H2, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
+import VideoCard from "../card/VideoCard"
 
 //TODO Needa think how to have a custom Youtube player with overlay image here: https://www.npmjs.com/package/react-image-video-lightbox
 
@@ -33,7 +34,8 @@ export default function WarriorSection() {
           </Link>
         </TextWrapper>
         <VideoWrapper>
-          <VideoFrame>
+          <VideoCard />
+          {/* <VideoFrame>
             <iframe
               src="https://www.youtube.com/embed/E7wJTI-1dvQ"
               frameborder="0"
@@ -43,7 +45,7 @@ export default function WarriorSection() {
               width="100%"
               height="300px"
             />
-          </VideoFrame>
+          </VideoFrame> */}
           <VideoTitle>
             Vừa tham gia chương trình Chiến Binh X.0 vừa có cơ hội nhận được
             iPhone 12 HOT nhất hiện nay! Bạn nghĩ sao?
@@ -104,9 +106,10 @@ const VideoWrapper = styled.div`
   gap: 30px;
   justify-items: center;
 `
-const VideoFrame = styled.div`
-  width: 500px;
-`
+// const VideoFrame = styled.div`
+//   width: 500px;
+// `
 const VideoTitle = styled(Caption2)`
   text-align: center;
+  max-width: 368px;
 `

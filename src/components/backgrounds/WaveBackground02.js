@@ -1,14 +1,20 @@
 import React from "react"
 import styled from "styled-components"
 
-export default function WaveBackground02() {
+export default function WaveBackground02(props) {
   return (
     <Wrapper>
-      <Circle01 />
-      <Circle02 />
-      <Background src="/images/waves/courses-wave1-light.svg" />
-      <Background03 src="/images/animations/wavelines-1.svg" />
-      <Background02 src="/images/waves/hero-wave3.svg" />
+      <Circle01 circleVisiable={props.circleVisiable} />
+      <Circle02 circleVisiable={props.circleVisiable} />
+      <Background
+        src={props.background01 || "/images/waves/courses-wave1-light.svg"}
+      />
+      <Background03
+        src={props.background03 || "/images/animations/wavelines-1.svg"}
+      />
+      <Background02
+        src={props.background02 || "/images/waves/hero-wave3.svg"}
+      />
     </Wrapper>
   )
 }
@@ -40,6 +46,7 @@ const Background03 = styled.img`
 `
 
 const Circle01 = styled.div`
+  visibility: ${props => props.circleVisiable || "block"};
   width: 350px;
   height: 350px;
   -moz-border-radius: 50%;
@@ -59,6 +66,7 @@ const Circle01 = styled.div`
 `
 
 const Circle02 = styled.div`
+  visibility: ${props => props.circleVisiable || "block"};
   width: 350px;
   height: 350px;
   -moz-border-radius: 50%;

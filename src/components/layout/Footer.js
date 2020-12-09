@@ -13,50 +13,95 @@ export default function Footer() {
     <Wrapper>
       <MenuWrapper>
         {menuData.map((item, index) => {
-          return <MenuButton item={item} title={item.title} key={index} />
+          if (item.title) {
+            return (
+              <MenuButton
+                item={item}
+                title={item.title}
+                key={index}
+                textColor={(item.textColor = "")}
+              />
+            )
+          }
         })}
-        //TODO Fix why the menu didn't show on top
-        <CopyRight>Copywriting</CopyRight>
+        {aboutSubmenuData.map((item, index) => {
+          return (
+            <MenuButton
+              item={item}
+              title={item.title}
+              key={index}
+              textColor={(item.textColor = "")}
+            />
+          )
+        })}
+        {programSubmenuData.map((item, index) => {
+          return (
+            <MenuButton
+              item={item}
+              title={item.title}
+              key={index}
+              textColor={(item.textColor = "")}
+            />
+          )
+        })}
       </MenuWrapper>
+      <CopyRight>Copywriting</CopyRight>
+
       <BackgroundWrapper>
-        <Background src="images/waves/footer-wave2.svg" />
-        <Background src="images/waves/footer-wave1.svg" />
-        <Background src="images/waves/footer-wave3.svg" />
-        <Background src="images/waves/CircleGaps.svg" />
+        <img src="images/waves/footer-wave2.svg" />
+        <img src="images/waves/footer-wave1.svg" />
+        <img src="images/waves/footer-wave3.svg" />
+        <img src="images/waves/CircleGaps.svg" />
       </BackgroundWrapper>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  top: 6000px;
+  top: 6200px;
   width: 100%;
   position: absolute;
+  display: grid;
+
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
 `
+// const ContentWrapper = styled.div`
+//   position: absolute;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   width: 100%;
+
+//   align-items: center;
+//   justify-items: center;
+// `
 
 const MenuWrapper = styled.div`
   display: grid;
+  position: absolute;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  z-index: 1;
 `
 const BackgroundWrapper = styled.div`
   display: grid;
   grid-template-columns: auto;
-  z-index: -1;
   * {
+    z-index: -1;
     position: absolute;
     :nth-child(2) {
-      top: 80px;
       transform: scale(1.2);
     }
     :nth-child(1) {
-      top: 80px;
-      left: 200px;
       transform: scale(1.2);
+      left: 200px;
     }
   }
 `
-const Background = styled.img``
 
-const CopyRight = styled(SmallText)``
+const CopyRight = styled(SmallText)`
+  position: absolute;
+  top: 200px;
+  color: white;
+`
