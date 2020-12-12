@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import WaveBackground3 from "../backgrounds/WaveBackground3"
 import { Caption2, H2, MediumText } from "../styles/TextStyles"
@@ -8,10 +8,31 @@ import SectionInfo1 from "../misc/SectionInfo1"
 import Testimonial from "../misc/Testimonial"
 import FeaturedLogos from "../misc/FeaturedLogos"
 import YoutubeVideo from "../misc/YoutubeVideo"
+import LightBox from "../../components/misc/LightBox"
 
 export default function YoutubeSection() {
+  const [isPlay, setIsPlay] = useState(false)
+  const [isOpen, setIsOpen] = useState(0)
+
+  function onClickPlayHandle(event) {
+    setIsOpen(1)
+    setIsPlay(true)
+    event.preventDefault()
+  }
+
+  function onClickCloseHandle(event) {
+    setIsPlay(false)
+    setIsOpen(0)
+    event.preventDefault()
+  }
   return (
     <Wrapper>
+      <LightBox
+        isOpen={isOpen}
+        isPlay={isPlay}
+        onClickCloseHandle={onClickCloseHandle}
+        url="" //TODO: Think of using onClickUrlInput handler and UseRef to feed the new url everytime click the play button. tough call
+      />
       <WaveBackground3 />
       <TestimonialWrapper>
         <Testimonial avatar="" name="" position="" comment="" />
@@ -29,9 +50,9 @@ export default function YoutubeSection() {
       <FeaturedLogos />
       <SectionInfo1 caption="" title="" description="" />
       <YoutubeVideosWrapper>
-        <YoutubeVideo />
-        <YoutubeVideo />
-        <YoutubeVideo />
+        <YoutubeVideo onClickPlayHandle={onClickPlayHandle} />
+        <YoutubeVideo onClickPlayHandle={onClickPlayHandle} url="" />
+        <YoutubeVideo onClickPlayHandle={onClickPlayHandle} url="" />
       </YoutubeVideosWrapper>
       <MiniButtonIcon title="Browse More" />
     </Wrapper>

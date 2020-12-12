@@ -3,10 +3,10 @@ import styled from "styled-components"
 
 import { Caption } from "../styles/TextStyles"
 import { Link } from "gatsby"
-import PlayButtonWithLightBox from "./PlayButtonWithLightBox"
+import PlayButton from "./PlayButton"
 export default function YoutubeVideo(props) {
   return (
-    <Wrapper>
+    <Wrapper onClick={props.onClickPlayHandle}>
       <Link to={props.link || "/"}>
         <ContentWrapper>
           <ThumbnailWrapper>
@@ -14,7 +14,7 @@ export default function YoutubeVideo(props) {
               src={props.thumbnailSrc || "images/background/background01.jpeg"}
             />
             <IconWrapper>
-              <PlayButtonWithLightBox />
+              <PlayButton onClickPlayHandle={props.onClickPlayHandle} />
             </IconWrapper>
           </ThumbnailWrapper>
           <Title>

@@ -1,10 +1,11 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import ButtonIcon from "../buttons/ButtonIcon"
 import { Caption, Caption2, H2, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
 import VideoCard from "../card/VideoCard"
+import LightBox from "../../components/misc/LightBox"
 
 //TODO Needa think how to have a custom Youtube player with overlay image here: https://www.npmjs.com/package/react-image-video-lightbox
 
@@ -13,8 +14,27 @@ import VideoCard from "../card/VideoCard"
 // TODO Fix the background issue when it turns to dark mode
 
 export default function WarriorSection() {
+  const [isPlay, setIsPlay] = useState(false)
+  const [isOpen, setIsOpen] = useState(0)
+
+  function onClickPlayHandle(event) {
+    setIsOpen(1)
+    setIsPlay(true)
+    event.preventDefault()
+  }
+
+  function onClickCloseHandle(event) {
+    setIsPlay(false)
+    setIsOpen(0)
+    event.preventDefault()
+  }
   return (
     <Wrapper>
+      <LightBox
+        isOpen={isOpen}
+        isPlay={isPlay}
+        onClickCloseHandle={onClickCloseHandle}
+      />
       <ContentWrapper>
         <TextWrapper>
           <HeaderWrapper>
@@ -34,18 +54,8 @@ export default function WarriorSection() {
           </Link>
         </TextWrapper>
         <VideoWrapper>
-          <VideoCard />
-          {/* <VideoFrame>
-            <iframe
-              src="https://www.youtube.com/embed/E7wJTI-1dvQ"
-              frameborder="0"
-              allow="autoplay; encrypted-media"
-              allowfullscreen
-              title="video"
-              width="100%"
-              height="300px"
-            />
-          </VideoFrame> */}
+          <VideoCard onClickPlayHandle={onClickPlayHandle} />
+
           <VideoTitle>
             Vừa tham gia chương trình Chiến Binh X.0 vừa có cơ hội nhận được
             iPhone 12 HOT nhất hiện nay! Bạn nghĩ sao?

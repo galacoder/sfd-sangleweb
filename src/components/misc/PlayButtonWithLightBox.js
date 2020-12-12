@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import ReactPlayer from "react-player"
+import PropTypes from "prop-types"
 
 export default function PlayButtonWithLightBox(props) {
   const [isPlay, setIsPlay] = useState(false)
@@ -92,6 +93,8 @@ const LightBox = styled.div`
   position: fixed;
   width: 100vw;
   height: 100vh;
+  top: 0px;
+  left: 0px;
 
   /* Box-model */
   display: flex;

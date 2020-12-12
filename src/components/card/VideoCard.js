@@ -1,16 +1,18 @@
 import React from "react"
 import styled from "styled-components"
-import PlayButtonWithLightBox from "../misc/PlayButtonWithLightBox"
-import { Caption2, H3, SmallText } from "../styles/TextStyles"
+import PlayButton from "../misc/PlayButton"
 
 export default function VideoCard(props) {
   return (
-    <Wrapper>
+    <Wrapper onClick={props.onClickPlayHandle}>
       <Background backgroundColor={props.backgroundColor}>
         <Image
           src={props.src || "/images/illustration/warriorx0-illustration.svg"}
         />
-        <PlayButtonWithLightBox bigPlayIcon="true" />
+        <PlayButton
+          bigPlayIcon="true"
+          onClickPlayHandle={props.onClickPlayHandle}
+        />
       </Background>
     </Wrapper>
   )
