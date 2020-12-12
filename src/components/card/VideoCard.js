@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import PlayButtonWithLightBox from "../misc/PlayButtonWithLightBox"
 import { Caption2, H3, SmallText } from "../styles/TextStyles"
 
 export default function VideoCard(props) {
@@ -9,10 +10,7 @@ export default function VideoCard(props) {
         <Image
           src={props.src || "/images/illustration/warriorx0-illustration.svg"}
         />
-        <PlayIconWrapper>
-          <PlayIcon src="/images/icons/play.svg" />
-          <PlayRing src="/images/icons/progress.svg" />
-        </PlayIconWrapper>
+        <PlayButtonWithLightBox bigPlayIcon="true" />
       </Background>
     </Wrapper>
   )
@@ -61,48 +59,4 @@ const Background = styled.div`
 // `
 const Image = styled.img`
   width: 100%;
-`
-const PlayIconWrapper = styled.div`
-  display: grid;
-  grid-template-columns: auto;
-  align-items: center;
-  justify-items: center;
-
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(
-    180deg,
-    rgba(24, 32, 79, 0.4) 0%,
-    rgba(24, 32, 79, 0.25) 100%
-  );
-  border: 0.385106px solid rgba(0, 0, 0, 0.3);
-  box-sizing: border-box;
-  box-shadow: 0px 15.4043px 30.8085px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(30.8085px);
-  /* Note: backdrop-filter has minimal browser support */
-
-  border-radius: 80px;
-
-  /*Animation */
-  :hover {
-    *,
-    & {
-      transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
-    transform: scale(1.1);
-  }
-`
-const PlayIcon = styled.img`
-  position: absolute;
-  transform: scale(0.8);
-`
-const PlayRing = styled.img`
-  position: absolute;
-  left: 33px;
-  bottom: 28px;
-
-  transform: scale(1.3);
-  ${PlayIconWrapper}:hover & {
-    filter: hue-rotate(100deg) brightness(150%);
-  }
 `

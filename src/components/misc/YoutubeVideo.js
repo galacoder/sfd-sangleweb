@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 import { Caption } from "../styles/TextStyles"
 import { Link } from "gatsby"
+import PlayButtonWithLightBox from "./PlayButtonWithLightBox"
 export default function YoutubeVideo(props) {
   return (
     <Wrapper>
@@ -12,10 +13,9 @@ export default function YoutubeVideo(props) {
             <Thumbnail
               src={props.thumbnailSrc || "images/background/background01.jpeg"}
             />
-            <PlayIconWrapper>
-              <PlayIcon src="/images/icons/play.svg" />
-              <PlayRing src="/images/icons/progress.svg" />
-            </PlayIconWrapper>
+            <IconWrapper>
+              <PlayButtonWithLightBox />
+            </IconWrapper>
           </ThumbnailWrapper>
           <Title>
             {props.title ||
@@ -52,6 +52,11 @@ const ContentWrapper = styled.div`
   grid-template-columns: auto;
   margin: 20px;
   gap: 13px;
+`
+const IconWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  float: none;
 `
 
 const ThumbnailWrapper = styled.div`

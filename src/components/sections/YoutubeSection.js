@@ -29,7 +29,7 @@ export default function YoutubeSection() {
       <FeaturedLogos />
       <SectionInfo1 caption="" title="" description="" />
       <YoutubeVideosWrapper>
-        <YoutubeVideo link="" thumbnailSrc="" title="" />
+        <YoutubeVideo />
         <YoutubeVideo />
         <YoutubeVideo />
       </YoutubeVideosWrapper>
