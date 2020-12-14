@@ -1,26 +1,53 @@
-import React from "react"
+import React, { useState } from "react"
 import styled, { keyframes } from "styled-components"
 import { H1, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
-import ButtonIcon from "../buttons/ButtonIcon"
+import ButtonPlayIcon from "../buttons/ButtonPlayIcon"
 import { Link } from "gatsby"
 import WaveBackground from "../backgrounds/WaveBackground"
+import LightBox from "../../components/misc/LightBox"
 
 function HeroSection() {
+  const [isPlay, setIsPlay] = useState(false)
+  const [isOpen, setIsOpen] = useState(0)
+
+  function onClickPlayHandle(event) {
+    setIsOpen(1)
+    setIsPlay(true)
+    event.preventDefault()
+  }
+
+  function onClickCloseHandle(event) {
+    setIsPlay(false)
+    setIsOpen(0)
+    event.preventDefault()
+  }
+
+  function urlHandler() {
+    const url = "https://youtu.be/ff98l3P66i8"
+    return url
+  }
   return (
     <Wrapper>
+      <LightBox
+        isOpen={isOpen}
+        isPlay={isPlay}
+        onClickCloseHandle={onClickCloseHandle}
+        url={urlHandler()} //change the URL in the function
+      />
       <WaveBackground />
       <HeroWrapper>
         <ContentWrapper>
           <TextWrapper>
             <Title>VƯƠN TẦM BẢN THÂN</Title>
             <Description>BƯỚC ĐI TỰ TIN TRÊN HÀNH TRÌNH 4.0</Description>
-            <Link to="/page-2">
-              <ButtonIcon
-                title="Khoảnh khắc lột xác của đời Sang Lê"
-                subtitle="Xem Ngay"
-              />
-            </Link>
+
+            <ButtonPlayIcon
+              title="Khoảnh khắc lột xác của đời Sang Lê"
+              subtitle="Xem Ngay"
+              onClickPlayHandle={onClickPlayHandle}
+              onClick={() => urlHandler}
+            />
           </TextWrapper>
           {/* <MockupAnimation /> */}
         </ContentWrapper>

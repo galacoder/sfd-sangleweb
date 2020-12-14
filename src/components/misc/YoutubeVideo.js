@@ -55,8 +55,6 @@ const ContentWrapper = styled.div`
 `
 const IconWrapper = styled.div`
   position: absolute;
-  width: 100%;
-  float: none;
 `
 
 const ThumbnailWrapper = styled.div`
@@ -75,50 +73,4 @@ const Title = styled(Caption)`
   max-width: 310px;
   text-align: center;
   text-transform: capitalize;
-`
-
-const PlayIconWrapper = styled.div`
-  position: absolute;
-  align-self: center;
-
-  display: grid;
-  grid-template-columns: auto;
-  align-items: center;
-  justify-items: center;
-
-  width: 78px;
-  height: 78px;
-  background: linear-gradient(
-    180deg,
-    rgba(24, 32, 79, 0.4) 0%,
-    rgba(24, 32, 79, 0.25) 100%
-  );
-  border: 0.385106px solid rgba(0, 0, 0, 0.3);
-  box-sizing: border-box;
-  box-shadow: 0px 15.4043px 30.8085px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(30.8085px);
-  /* Note: backdrop-filter has minimal browser support */
-
-  border-radius: 80px;
-
-  /*Animation */
-  :hover {
-    *,
-    & {
-      transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
-    transform: scale(1.1);
-  }
-`
-const PlayIcon = styled.img`
-  position: absolute;
-  transform: scale(0.6);
-`
-const PlayRing = styled.img`
-  position: absolute;
-  left: 18px;
-  bottom: 13px;
-  ${PlayIconWrapper}:hover & {
-    filter: hue-rotate(100deg) brightness(150%);
-  }
 `

@@ -28,12 +28,18 @@ export default function WarriorSection() {
     setIsOpen(0)
     event.preventDefault()
   }
+
+  function urlHandler() {
+    const url = "https://youtu.be/ff98l3P66i8"
+    return url
+  }
   return (
     <Wrapper>
       <LightBox
         isOpen={isOpen}
         isPlay={isPlay}
         onClickCloseHandle={onClickCloseHandle}
+        url={urlHandler()} //change the URL in the function
       />
       <ContentWrapper>
         <TextWrapper>
@@ -54,7 +60,10 @@ export default function WarriorSection() {
           </Link>
         </TextWrapper>
         <VideoWrapper>
-          <VideoCard onClickPlayHandle={onClickPlayHandle} />
+          <VideoCard
+            onClickPlayHandle={onClickPlayHandle}
+            onClick={() => urlHandler}
+          />
 
           <VideoTitle>
             Vừa tham gia chương trình Chiến Binh X.0 vừa có cơ hội nhận được
