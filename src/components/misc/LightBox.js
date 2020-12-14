@@ -11,6 +11,7 @@ export default function LightBox(props) {
           height="100%"
           url={props.url || "https://youtu.be/ocKYZdShDgA"}
           playing={props.isPlay}
+          controls="true"
         />
       </Modal>
       <CloseButton
@@ -81,7 +82,7 @@ const CloseButton = styled.img`
   /* Box-model */
   position: absolute;
   right: 230px;
-  top: 45px;
+  top: 66px;
   z-index: 10;
 
   /* Visual */

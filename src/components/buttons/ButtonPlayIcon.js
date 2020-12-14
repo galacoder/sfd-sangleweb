@@ -6,7 +6,7 @@ import PlayButton from "../misc/PlayButton"
 export default function ButtonPlayIcon(props) {
   const { title, iconSrc, subtitle } = props
   return (
-    <Wrapper>
+    <Wrapper onClick={props.onClickPlayHandle}>
       <IconWrapper>
         <IconRing src={iconSrc || "/images/icons/icon-ring.svg"} />
         <PlayButton onClickPlayHandle={props.onClickPlayHandle} />
