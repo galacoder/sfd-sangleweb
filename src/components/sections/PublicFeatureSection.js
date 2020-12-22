@@ -4,10 +4,12 @@ import WaveBackground02 from "../backgrounds/WaveBackground02"
 import { Caption2, H2, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
 import FeaturedLogos from "../misc/FeaturedLogos"
+import SectionPaddingBlock from "../layout/SectionPaddingBlock"
 
 export default function PublicFeatureSection() {
   return (
     <Wrapper>
+      <SectionPaddingBlock />
       <ContentWrapper>
         <TextWrapper>
           <Caption>Công nghiệp 4.0</Caption>
@@ -28,6 +30,7 @@ export default function PublicFeatureSection() {
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  height: 668px;
 `
 const ContentWrapper = styled.div`
   position: absolute;

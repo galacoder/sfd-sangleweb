@@ -20,18 +20,14 @@ export default function WaveBackground02(props) {
 }
 
 const Wrapper = styled.div`
-  position: relative;
   @media (max-width: 450px) {
-    width: 1676px;
-    height: 500.47px;
-    left: 0px;
+    width: 100%;
   }
 `
 
 const Background = styled.img`
   width: 100%;
   position: absolute;
-
   z-index: -1;
 `
 

@@ -6,6 +6,7 @@ import { Caption, Caption2, H2, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
 import VideoCard from "../card/VideoCard"
 import LightBox from "../../components/misc/LightBox"
+import SectionPaddingBlock from "../layout/SectionPaddingBlock"
 
 //TODO Needa think how to have a custom Youtube player with overlay image here: https://www.npmjs.com/package/react-image-video-lightbox
 
@@ -35,6 +36,7 @@ export default function WarriorSection() {
   }
   return (
     <Wrapper>
+      <SectionPaddingBlock />
       <LightBox
         isOpen={isOpen}
         isPlay={isPlay}
@@ -77,8 +79,7 @@ export default function WarriorSection() {
 
 const Wrapper = styled.div`
   position: relative;
-  top: 550px;
-  height: 800px;
+  height: 868px;
   width: 100%;
 `
 const ContentWrapper = styled.div`

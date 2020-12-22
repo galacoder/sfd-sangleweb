@@ -5,9 +5,16 @@ import { Caption2, H2, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
 import FullCard from "../card/FullCard"
 import Certificates from "../misc/Certificates"
+
 export default function BusinessSection() {
   return (
     <Wrapper>
+      <WaveBackground02
+        background01="images/waves/courses-wave1.svg"
+        background02=""
+        background03=""
+        circleVisiable="hidden"
+      />
       <ContentWrapper>
         <TextWrapper>
           <Caption>7 Tuần chất như nước cất</Caption>
@@ -23,12 +30,7 @@ export default function BusinessSection() {
           <Certificates />
         </CertificateWrapper>
       </ContentWrapper>
-      <WaveBackground02
-        background01="images/waves/courses-wave1.svg"
-        background02=""
-        background03=""
-        circleVisiable="hidden"
-      />
+
       <Courses>
         <FullCard
           title="xây dựng khởi nghiệp của bạn từ A-Z và marketing ra thị trường"
@@ -54,16 +56,16 @@ export default function BusinessSection() {
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  top: 600px;
+  height: 1268px;
 `
 const ContentWrapper = styled.div`
   position: absolute;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 60px;
-
+  height: 200px;
   top: 150px;
-  left: 150px;
+  left: 100px;
 
   @media (max-width: 450px) {
     display: grid;

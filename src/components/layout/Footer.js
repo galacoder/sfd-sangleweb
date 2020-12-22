@@ -58,9 +58,9 @@ export default function Footer() {
 }
 
 const Wrapper = styled.div`
-  top: 6200px;
   width: 100%;
-  position: absolute;
+  height: 866px;
+  position: relative;
   display: grid;
 
   justify-content: center;

@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   justify-content: center;
   justify-items: center;
   text-align: center;
-  gap: 8px;
+  gap: 16px;
 `
 const Caption = styled(Caption2)`
   color: ${props => props.textColor || "white"};

@@ -6,6 +6,7 @@ import ButtonPlayIcon from "../buttons/ButtonPlayIcon"
 import { Link } from "gatsby"
 import WaveBackground from "../backgrounds/WaveBackground"
 import LightBox from "../../components/misc/LightBox"
+import SectionPaddingBlock from "../layout/SectionPaddingBlock"
 
 function HeroSection() {
   const [isPlay, setIsPlay] = useState(false)
@@ -77,6 +78,8 @@ const animation = keyframes`
 
 const Wrapper = styled.div`
   width: 100%;
+  height: 700px;
+  position: relative;
 
   @media (max-width: 768px) {
     height: 1000px;

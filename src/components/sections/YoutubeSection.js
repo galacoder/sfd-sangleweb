@@ -13,6 +13,7 @@ import LightBox from "../../components/misc/LightBox"
 export default function YoutubeSection() {
   const [isPlay, setIsPlay] = useState(false)
   const [isOpen, setIsOpen] = useState(0)
+  const [url, setUrl] = useState("https://youtu.be/RO0DCN234p8")
 
   function onClickPlayHandle(event) {
     setIsOpen(1)
@@ -25,14 +26,13 @@ export default function YoutubeSection() {
     setIsOpen(0)
     event.preventDefault()
   }
+
+  function onUrlHandler01() {
+    setUrl("https://youtu.be/ff98l3P66i8")
+  }
+
   return (
     <Wrapper>
-      <LightBox
-        isOpen={isOpen}
-        isPlay={isPlay}
-        onClickCloseHandle={onClickCloseHandle}
-        url="" //TODO: Think of using onClickUrlInput handler and UseRef to feed the new url everytime click the play button. tough call
-      />
       <WaveBackground3 />
       <TestimonialWrapper>
         <Testimonial avatar="" name="" position="" comment="" />
@@ -48,21 +48,35 @@ export default function YoutubeSection() {
         </InfoWrapper>
       </TestimonialWrapper>
       <FeaturedLogos />
-      <SectionInfo1 caption="" title="" description="" />
+      <SectionInfo1 caption="" title="Video Nổi Bật" description="" />
       <YoutubeVideosWrapper>
-        <YoutubeVideo onClickPlayHandle={onClickPlayHandle} />
-        <YoutubeVideo onClickPlayHandle={onClickPlayHandle} url="" />
-        <YoutubeVideo onClickPlayHandle={onClickPlayHandle} url="" />
+        <YoutubeVideo
+          onClickPlayHandle={onClickPlayHandle}
+          onClick={() => onUrlHandler01()}
+        />
+        <YoutubeVideo
+          onClickPlayHandle={onClickPlayHandle}
+          onClick={() => setUrl("https://youtu.be/jf2bx2P5NQg")}
+        />
+        <YoutubeVideo
+          onClickPlayHandle={onClickPlayHandle}
+          onClick={() => setUrl("https://youtu.be/yW8hd9WvJ5A")}
+        />
       </YoutubeVideosWrapper>
       <MiniButtonIcon title="Browse More" />
+      <LightBox
+        isOpen={isOpen}
+        isPlay={isPlay}
+        onClickCloseHandle={onClickCloseHandle}
+        url={url} //change the URL in the function
+      />
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
   position: relative;
-  height: 600px;
-  top: 2000px;
+  height: 1266px;
   display: grid;
   grid-template-columns: auto;
   align-items: center;
