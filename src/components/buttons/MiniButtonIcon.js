@@ -6,7 +6,7 @@ export default function MiniButtonIcon(props) {
   const { title, iconSrc } = props
   return (
     <Wrapper>
-      <IconWrapper>
+      <IconWrapper background={props.background}>
         <IconRing src={iconSrc || "/images/icons/icon-ring.svg"} />
         <Icon src={iconSrc || "/images/icons/book.svg"} />
       </IconWrapper>
@@ -66,7 +66,9 @@ const IconWrapper = styled.div`
 
   position: relative;
 
-  background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
+  background: ${props =>
+    props.background ||
+    "linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%)"};
   box-shadow: 0px 10px 20px rgba(182, 153, 255, 0.3);
 
   ${Wrapper}:hover & {

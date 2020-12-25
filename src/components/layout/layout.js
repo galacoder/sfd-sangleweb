@@ -20,6 +20,10 @@ export default Layout
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 1f;
+  grid-template-columns: 1fr;
   gap: 30px;
+
+  @media (max-width: 450px) {
+    overflow: hidden;
+  }
 `

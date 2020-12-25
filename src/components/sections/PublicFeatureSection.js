@@ -9,7 +9,6 @@ import SectionPaddingBlock from "../layout/SectionPaddingBlock"
 export default function PublicFeatureSection() {
   return (
     <Wrapper>
-      <SectionPaddingBlock />
       <ContentWrapper>
         <TextWrapper>
           <Caption>Công nghiệp 4.0</Caption>

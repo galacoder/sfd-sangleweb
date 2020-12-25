@@ -80,7 +80,11 @@ export default function WarriorSection() {
 const Wrapper = styled.div`
   position: relative;
   height: 868px;
-  width: 100%;
+  width: 100vw;
+
+  @media (max-width: 450px) {
+    height: 1500px;
+  }
 `
 const ContentWrapper = styled.div`
   display: flex;
@@ -89,6 +93,26 @@ const ContentWrapper = styled.div`
   align-items: center;
   padding: 100px;
   gap: 88px;
+
+  @media screen and (max-width: 450px) {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    > * {
+      :nth-child(1) {
+        width: 90vw;
+      }
+      :nth-child(2) {
+        width: 90vw;
+        transform: scale(0.8);
+        padding: 0px;
+      }
+    }
+  }
 `
 const TextWrapper = styled.div`
   display: grid;
@@ -120,7 +144,6 @@ const Description = styled(MediumText)`
   }
 `
 const VideoWrapper = styled.div`
-  width: 500px;
   display: grid;
   grid-template-columns: auto;
   gap: 30px;

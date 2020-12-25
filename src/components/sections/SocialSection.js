@@ -25,8 +25,11 @@ export default function SocialSection() {
             quyết từ Sang mỗi tuần để giúp bạn bước đi tự tin trên hành trình
             4.0
           </TDescriptions>
-          <MiniButtonIcon />
         </TContentWrapper>
+        <MiniButtonIcon
+          title="Tham gia ngay"
+          background="linear-gradient(306.87deg, #FF7777 22.29%, #EF234C 75.32%)"
+        />
       </TipWrapper>
     </Wrapper>
   )
@@ -82,20 +85,26 @@ const TipWrapper = styled.div`
   width: 421px;
   height: 380px;
 
-  /* Gradient 15 */
-
-  background: linear-gradient(218.31deg, #007aff 0%, #50a4ff 100%);
-  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(40px);
-  /* Note: backdrop-filter has minimal browser support */
-
-  border-radius: 40px;
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-items: center;
+  gap: 30px;
 `
 const TContentWrapper = styled.div`
   padding: 30px 30px;
   display: grid;
   grid-template-columns: auto;
   gap: 20px;
+
+  /* Gradient */
+
+  background: linear-gradient(306.87deg, #ff4b1f 22.29%, #ff9068 75.32%);
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(40px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 40px;
 `
 
 const TCaption = styled(Caption)`

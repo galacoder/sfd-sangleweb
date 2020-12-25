@@ -37,7 +37,6 @@ const Background = styled.div`
     props.backgroundColor || "linear-gradient(to right, #11998e, #38ef7d);"};
   background: -webkit-linear-gradient(to right, #11998e, #38ef7d);
   border-radius: 20px;
-  padding: 20px;
 
   display: grid;
   grid-template-columns: auto;

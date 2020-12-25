@@ -77,31 +77,41 @@ const animation = keyframes`
 `
 
 const Wrapper = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 700px;
-  position: relative;
 
   @media (max-width: 768px) {
     height: 1000px;
   }
+  @media (max-width: 450) {
+  }
 `
 
 const HeroWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  /* display: flex;
+  flex-direction: row; */
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
   align-items: center;
   padding: 100px 100px;
 
   /* iPhone Size*/
   @media (max-width: 450px) {
     grid-template-columns: auto;
-    padding: 100px 0px;
+    padding: 0px;
+
+    margin-top: 180px;
 
     > * {
       :nth-child(2) {
-        transform: scale(0.8);
+        transform: scale(0.9);
         transform-origin: top;
+        order: 1;
+      }
+      :nth-child(1) {
+        order: 2;
       }
     }
   }
@@ -157,7 +167,7 @@ const ImageWrapper = styled.div`
 
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   :hover {
-    transform: rotateX(30deg) rotateY(20deg);
+    filter: brightness(150%) hue-rotate(30deg);
   }
 
   /* @media (max-width: 450px) {
@@ -180,13 +190,13 @@ const Title = styled(H1)`
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  @media (max-width: 450px) {
+  @media (max-width: 414px) {
     text-align: center;
   }
 `
 const Description = styled(MediumText)`
   color: ${themes.light.text1};
-  @media (max-width: 450px) {
+  @media (max-width: 414px) {
     text-align: center;
   }
 `
