@@ -82,6 +82,11 @@ const Wrapper = styled.div`
   align-items: center;
   justify-items: center;
   justify-content: center;
+  width: 100vw;
+
+  @media (max-width: 450px) {
+    height: 2268px;
+  }
 `
 
 const TestimonialWrapper = styled.div`
@@ -90,6 +95,14 @@ const TestimonialWrapper = styled.div`
   justify-content: center;
   padding: 100px;
   align-items: center;
+
+  @media (max-width: 450px) {
+    grid-template-columns: auto;
+    justify-content: left;
+    justify-items: left;
+    align-items: left;
+    padding: 0px;
+  }
 `
 
 //Testimonial Component
@@ -113,4 +126,8 @@ const YoutubeVideosWrapper = styled.div`
   padding: 60px;
   justify-items: center;
   align-items: center;
+
+  @media (max-width: 450px) {
+    grid-template-columns: auto;
+  }
 `

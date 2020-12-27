@@ -55,6 +55,14 @@ const TextWrapper = styled.div`
   display: grid;
   gap: 20px;
   z-index: 1;
+
+  @media (max-width: 450px) {
+    display: grid;
+    grid-template-columns: auto;
+    width: 100vw;
+    padding: 30px;
+    padding-left: 0px;
+  }
 `
 const Caption = styled(Caption2)`
   color: ${themes.dark.text1};
