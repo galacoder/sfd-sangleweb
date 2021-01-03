@@ -12,3 +12,14 @@ export const GlobalStyle = createGlobalStyle`
 
   }
 `
+// const Wrapper = styled.div`
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   gap: 30px;
+//   /* width: 100vw;
+//   overflow: hidden; */
+
+//   @media (max-width: 450px) {
+//     overflow: hidden;
+//   }
+// `

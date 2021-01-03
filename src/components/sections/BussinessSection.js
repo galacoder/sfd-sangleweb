@@ -117,8 +117,11 @@ const Courses = styled.div`
   top: 350px;
 
   @media (max-width: 450px) {
-    grid-template-columns: 1fr;
     width: 100vw;
+    grid-template-columns: auto;
+
     padding-left: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 `

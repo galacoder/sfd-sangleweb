@@ -18,8 +18,9 @@ export default function MiniButtonIcon(props) {
 }
 
 const Wrapper = styled.div`
+  position: relative;
   max-width: 300px;
-  padding: 12px;
+  padding: 20px;
   display: grid;
   grid-template-columns: 53px auto;
   gap: 10px;

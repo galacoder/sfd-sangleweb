@@ -10,7 +10,7 @@ function Layout({ children }) {
     <>
       <GlobalStyle />
       <Header />
-      <Wrapper>{children}</Wrapper>
+      {children}
       <Footer />
     </>
   )
@@ -18,12 +18,14 @@ function Layout({ children }) {
 
 export default Layout
 
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
+// const Wrapper = styled.div`
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   gap: 30px;
+//   /* width: 100vw;
+//   overflow: hidden; */
 
-  @media (max-width: 450px) {
-    overflow: hidden;
-  }
-`
+//   @media (max-width: 450px) {
+//     overflow: hidden;
+//   }
+// `

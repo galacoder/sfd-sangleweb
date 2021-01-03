@@ -63,7 +63,7 @@ export default function YoutubeSection() {
           onClick={() => setUrl("https://youtu.be/yW8hd9WvJ5A")}
         />
       </YoutubeVideosWrapper>
-      <MiniButtonIcon title="Browse More" />
+      <MiniButtonIcon title="Browse More" style={{}} />
       <LightBox
         isOpen={isOpen}
         isPlay={isPlay}
@@ -76,13 +76,13 @@ export default function YoutubeSection() {
 
 const Wrapper = styled.div`
   position: relative;
+  width: 100vw;
   height: 1266px;
   display: grid;
   grid-template-columns: auto;
   align-items: center;
   justify-items: center;
   justify-content: center;
-  width: 100vw;
 
   @media (max-width: 450px) {
     height: 2268px;
@@ -92,16 +92,17 @@ const Wrapper = styled.div`
 const TestimonialWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
   padding: 100px;
   align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
 
   @media (max-width: 450px) {
     grid-template-columns: auto;
-    justify-content: left;
-    justify-items: left;
-    align-items: left;
     padding: 0px;
+    gap: 20px;
+    margin-top: 100px;
   }
 `
 
@@ -112,6 +113,12 @@ const InfoWrapper = styled.div`
   display: grid;
   grid-template-columns: auto;
   gap: 8px;
+
+  @media (max-width: 450px) {
+    padding: 30px;
+    gap: 20px;
+    width: 100vw;
+  }
 `
 const Caption = styled(Caption2)``
 const Title = styled(H2)``
@@ -129,5 +136,6 @@ const YoutubeVideosWrapper = styled.div`
 
   @media (max-width: 450px) {
     grid-template-columns: auto;
+    transform: scale(0.9);
   }
 `

@@ -31,28 +31,57 @@ export default function BlogSetion() {
           )
         })}
       </BlogCards>
-      <MiniButtonIcon title="Browse More" />
+      <ButtonWrapper>
+        <MiniButtonIcon title="Browse More" />
+      </ButtonWrapper>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  position: relative;
-  top: 100px;
-  bottom: 100px;
+  width: 100vw;
   height: 888px;
+  margin-top: 150px;
+
   display: grid;
   grid-template-columns: auto;
   justify-items: center;
   align-items: center;
   gap: 30px;
+
+  position: relative;
+
+  @media (max-width: 450px) {
+    height: 688px;
+    margin-bottom: 150px;
+  }
 `
 
-const SectionWrapper = styled.div``
+const SectionWrapper = styled.div`
+  width: 100%;
+`
+
+const ButtonWrapper = styled.div`
+  @media (max-width: 450px) {
+    position: absolute;
+    top: 700px;
+  }
+`
 
 const BlogCards = styled.div`
+  width: 100vw;
+  height: 500px;
   display: grid;
+  justify-items: center;
+  align-items: center;
   grid-template-columns: repeat(${props => props.count}, 1fr);
   gap: 20px;
   margin: 50px;
+  box-sizing: border-box;
+  padding-left: 20px;
+
+  /* Scrolling */
+
+  overflow-y: hidden;
+  overflow-x: auto;
 `

@@ -36,8 +36,8 @@ export default function SocialSection() {
 }
 //Social Wrapper Styled
 const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
+  /* position: relative; */
+  width: 100vw;
   height: 1000px;
   top: 200px;
 
@@ -46,6 +46,20 @@ const Wrapper = styled.div`
 
   justify-items: center;
   align-items: center;
+
+  @media (max-width: 450px) {
+    height: 1300px;
+    grid-template-columns: auto;
+    top: 0px;
+    > {
+      :nth-child(1) {
+        position: absolute;
+      }
+      :nth-child(2) {
+        margin-top: 200px;
+      }
+    }
+  }
 `
 const SocialWrapper = styled.div`
   width: 665px;
@@ -59,6 +73,11 @@ const SocialWrapper = styled.div`
   /* Note: backdrop-filter has minimal browser support */
 
   border-radius: 0px 60px 60px 0px;
+
+  @media (max-width: 450px) {
+    width: 350px;
+    align-self: left;
+  }
 `
 const ContentWrapper = styled.div`
   display: grid;
@@ -68,6 +87,13 @@ const ContentWrapper = styled.div`
   justify-content: left;
 
   padding: 60px 60px;
+
+  @media (max-width: 450px) {
+    padding: 30px;
+    > * {
+      width: 300px;
+    }
+  }
 `
 
 const SCaption = styled(Caption)`
@@ -90,6 +116,14 @@ const TipWrapper = styled.div`
   align-items: center;
   justify-items: center;
   gap: 30px;
+
+  @media (max-width: 450px) {
+    width: 300px;
+    > * {
+      align-items: center;
+      justify-items: center;
+    }
+  }
 `
 const TContentWrapper = styled.div`
   padding: 30px 30px;

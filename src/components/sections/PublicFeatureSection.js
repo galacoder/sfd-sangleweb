@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import WaveBackground02 from "../backgrounds/WaveBackground02"
 import { Caption2, H2, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
@@ -26,9 +26,23 @@ export default function PublicFeatureSection() {
   )
 }
 
+/* Styled Components Animation */
+const animation = keyframes`
+  0%{
+    opacity: 0;
+    transform: translateY(-10px);
+    filter: blur(10px);
+  }
+  100%{
+    opacity: 100;
+    transform: translateY(0px);
+    filter: blur(0px);
+  }
+`
+
 const Wrapper = styled.div`
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 668px;
 `
 const ContentWrapper = styled.div`
@@ -41,6 +55,25 @@ const ContentWrapper = styled.div`
 
   left: 113px;
   top: 150px;
+
+  /*animation*/
+  > * {
+    /*Title*/
+    :nth-child(1) {
+      opacity: 0;
+      animation: ${animation} 1s 0.2s forwards;
+    }
+    /*description*/
+    :nth-child(2) {
+      opacity: 0;
+      animation: ${animation} 1s 0.4s forwards;
+    }
+    /*button*/
+    :nth-child(3) {
+      opacity: 0;
+      animation: ${animation} 1s 0.6s forwards;
+    }
+  }
 
   @media (max-width: 450px) {
     display: grid;
@@ -74,8 +107,4 @@ const Title = styled(H2)`
 const Description = styled(MediumText)`
   color: ${themes.dark.text1};
   opacity: 0.7;
-`
-
-const Logo01 = styled.img`
-  transform: scale(0.8);
 `

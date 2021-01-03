@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React, { useState } from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import ButtonIcon from "../buttons/ButtonIcon"
 import { Caption, Caption2, H2, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
@@ -73,9 +73,24 @@ export default function WarriorSection() {
           </VideoTitle>
         </VideoWrapper>
       </ContentWrapper>
+      <SectionPaddingBlock />
     </Wrapper>
   )
 }
+
+/* Styled Components Animation */
+const animation = keyframes`
+  0%{
+    opacity: 0;
+    transform: translateY(-10px);
+    filter: blur(10px);
+  }
+  100%{
+    opacity: 100;
+    transform: translateY(0px);
+    filter: blur(0px);
+  }
+`
 
 const Wrapper = styled.div`
   position: relative;
@@ -84,6 +99,24 @@ const Wrapper = styled.div`
 
   @media (max-width: 450px) {
     height: 1500px;
+  }
+  /*animation*/
+  > * {
+    /*Title*/
+    :nth-child(1) {
+      opacity: 0;
+      animation: ${animation} 1s 0.2s forwards;
+    }
+    /*description*/
+    :nth-child(2) {
+      opacity: 0;
+      animation: ${animation} 1s 0.4s forwards;
+    }
+    /*button*/
+    :nth-child(3) {
+      opacity: 0;
+      animation: ${animation} 1s 0.6s forwards;
+    }
   }
 `
 const ContentWrapper = styled.div`
@@ -97,8 +130,9 @@ const ContentWrapper = styled.div`
   @media screen and (max-width: 450px) {
     display: grid;
     grid-template-columns: auto;
-    justify-content: center;
+    /* justify-content: center;
     align-items: center;
+    align-content: center; */
 
     padding: 30px;
 
@@ -119,6 +153,10 @@ const TextWrapper = styled.div`
   grid-template-columns: auto;
   gap: 30px;
   width: 400px;
+  @media (max-width: 450px) {
+    justify-items: center;
+    gap: 50px;
+  }
 `
 
 const HeaderWrapper = styled.div`

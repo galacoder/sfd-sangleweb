@@ -21,5 +21,9 @@ const Wrapper = styled.div`
   align-content: center;
   justify-items: center;
   align-items: center;
+
+  @media (max-width: 450px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `
 const Logo = styled.img``

@@ -15,6 +15,11 @@ export default function Certifcates() {
 const Wrapper = styled.div`
   position: absolute;
 
+  @media (max-width: 450px) {
+    left: -30px;
+    transform: scale(0.8);
+  }
+
   * {
     box-sizing: border-box;
     transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);

@@ -64,9 +64,9 @@ const Wrapper = styled.div`
   display: grid;
 
   justify-content: center;
+  align-content: center;
   justify-items: center;
   align-items: center;
-  align-content: center;
 `
 // const ContentWrapper = styled.div`
 //   position: absolute;
@@ -83,6 +83,11 @@ const MenuWrapper = styled.div`
   position: absolute;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+
+  @media (max-width: 450px) {
+    grid-template-columns: 1fr 1fr;
+    margin-left: 30px;
+  }
 `
 const BackgroundWrapper = styled.div`
   display: grid;
@@ -98,10 +103,20 @@ const BackgroundWrapper = styled.div`
       left: 200px;
     }
   }
+  @media (max-width: 450px) {
+    * {
+      :nth-child(1) {
+        left: 0px;
+      }
+    }
+  }
 `
 
 const CopyRight = styled(SmallText)`
   position: absolute;
   top: 200px;
   color: white;
+  @media (max-width: 450px) {
+    top: 700px;
+  }
 `

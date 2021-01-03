@@ -24,6 +24,14 @@ const Wrapper = styled.div`
   justify-items: center;
   text-align: center;
   gap: 16px;
+
+  @media (max-width: 450px) {
+    width: 100vw;
+    grid-template-columns: 300px;
+    left: 0px;
+    justify-content: center;
+    justify-items: center;
+  }
 `
 const Caption = styled(Caption2)`
   color: ${props => props.textColor || "white"};
