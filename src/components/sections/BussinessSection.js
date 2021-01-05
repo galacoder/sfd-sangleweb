@@ -62,9 +62,9 @@ const Wrapper = styled.div`
   }
 `
 const ContentWrapper = styled.div`
-  position: absolute;
   display: grid;
   grid-template-columns: 1fr 2fr;
+  position: relative;
   gap: 60px;
   height: 200px;
   top: 150px;
@@ -106,21 +106,23 @@ const Description = styled(MediumText)`
 const CertificateWrapper = styled.div``
 
 const Courses = styled.div`
-  /* display: flex;
-  flex-direction: row; */
+  display: flex;
+  flex-direction: row;
+  /* width: 100vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
-  align-items: center;
-  position: absolute;
+  align-items: center; */
+
   gap: 30px;
-  top: 350px;
 
   @media (max-width: 450px) {
     width: 100vw;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
 
+    /* Scrooler */
     padding-left: 30px;
+
     overflow-x: auto;
     overflow-y: hidden;
   }

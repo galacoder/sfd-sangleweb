@@ -24,6 +24,8 @@ const Wrapper = styled.div`
 
   @media (max-width: 450px) {
     grid-template-columns: 1fr 1fr;
+    margin: 0px;
+    width: 350px;
   }
 `
 const Logo = styled.img``

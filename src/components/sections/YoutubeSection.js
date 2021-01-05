@@ -47,8 +47,14 @@ export default function YoutubeSection() {
           </Description>
         </InfoWrapper>
       </TestimonialWrapper>
-      <FeaturedLogos />
-      <SectionInfo1 caption="" title="Video Nổi Bật" description="" />
+      <FeaturedLogosWrapper>
+        <FeaturedLogos />
+      </FeaturedLogosWrapper>
+
+      <SectionInfoWrapper>
+        <SectionInfo1 caption="" title="Video Nổi Bật" description="" />
+      </SectionInfoWrapper>
+
       <YoutubeVideosWrapper>
         <YoutubeVideo
           onClickPlayHandle={onClickPlayHandle}
@@ -85,7 +91,7 @@ const Wrapper = styled.div`
   justify-content: center;
 
   @media (max-width: 450px) {
-    height: 2268px;
+    height: 2568px;
   }
 `
 
@@ -102,7 +108,6 @@ const TestimonialWrapper = styled.div`
     grid-template-columns: auto;
     padding: 0px;
     gap: 20px;
-    margin-top: 100px;
   }
 `
 
@@ -138,4 +143,13 @@ const YoutubeVideosWrapper = styled.div`
     grid-template-columns: auto;
     transform: scale(0.9);
   }
+`
+
+const FeaturedLogosWrapper = styled.div`
+  margin-top: 150px;
+  margin-bottom: 60px;
+`
+
+const SectionInfoWrapper = styled.div`
+  margin-top: 80px;
 `

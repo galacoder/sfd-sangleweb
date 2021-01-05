@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled, { keyframes } from "styled-components"
-import { H1, MediumText } from "../styles/TextStyles"
+import { H1, H2, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
 import ButtonPlayIcon from "../buttons/ButtonPlayIcon"
 import { Link } from "gatsby"
@@ -41,7 +41,9 @@ function HeroSection() {
         <ContentWrapper>
           <TextWrapper>
             <Title>VƯƠN TẦM BẢN THÂN</Title>
-            <Description>BƯỚC ĐI TỰ TIN TRÊN HÀNH TRÌNH 4.0</Description>
+            <Description>
+              BƯỚC ĐI TỰ TIN <br></br>TRÊN HÀNH TRÌNH 4.0
+            </Description>
 
             <ButtonPlayIcon
               title="Khoảnh khắc lột xác của đời Sang Lê"
@@ -88,9 +90,6 @@ const Wrapper = styled.div`
 `
 
 const HeroWrapper = styled.div`
-  /* display: flex;
-  flex-direction: row; */
-  margin-top: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
@@ -100,9 +99,8 @@ const HeroWrapper = styled.div`
   /* iPhone Size*/
   @media (max-width: 450px) {
     grid-template-columns: auto;
-    padding: 0px;
-
-    margin-top: 180px;
+    padding: 50px;
+    margin-top: 0px;
 
     > * {
       :nth-child(2) {
@@ -192,11 +190,15 @@ const Title = styled(H1)`
   color: transparent;
   @media (max-width: 414px) {
     text-align: center;
+    font-size: 26px;
+    line-height: 32px;
   }
 `
 const Description = styled(MediumText)`
   color: ${themes.light.text1};
-  @media (max-width: 414px) {
+  @media (max-width: 450px) {
     text-align: center;
+    font-weight: 600;
+    margin-bottom: 60px;
   }
 `
