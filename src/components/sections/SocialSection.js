@@ -2,7 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import SocialLogo from "../misc/SocialLogo"
 import MiniButtonIcon from "../buttons/MiniButtonIcon"
-import { Caption, H1, H3, BodyMain, BodyIntro } from "../styles/TextStyles"
+import {
+  Caption,
+  H1,
+  H3,
+  BodyMain,
+  BodyIntro,
+  MediumText,
+} from "../styles/TextStyles"
 
 export default function SocialSection() {
   return (
@@ -10,8 +17,10 @@ export default function SocialSection() {
       <SocialWrapper>
         <ContentWrapper>
           <SCaption>Mạng Xã Hội</SCaption>
-          <Title> Hãy Kết Nối Ngay với Sang Le </Title>
-          <Description>Hãy Kết Nối Ngay với Sang Le</Description>
+          <Title> Kết Nối </Title>
+          <Description>
+            Hãy kết nối ngay với Sang Le trên mạng xã hội
+          </Description>
           <SocialLogo />
         </ContentWrapper>
       </SocialWrapper>
@@ -147,6 +156,6 @@ const TCaption = styled(Caption)`
 const TTitle = styled(H3)`
   color: white;
 `
-const TDescriptions = styled(BodyMain)`
+const TDescriptions = styled(MediumText)`
   color: white;
 `

@@ -69,16 +69,19 @@ const ButtonWrapper = styled.div`
 `
 
 const BlogCards = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 500px;
   display: grid;
   justify-items: center;
   align-items: center;
   grid-template-columns: repeat(${props => props.count}, 1fr);
-  gap: 20px;
-  margin: 50px;
+  margin: 30px;
   box-sizing: border-box;
   padding-left: 20px;
+
+  @media (max-width: 450px) {
+    gap: 30px;
+  }
 
   /* Scrolling */
 

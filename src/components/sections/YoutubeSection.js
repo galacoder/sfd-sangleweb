@@ -146,10 +146,8 @@ const YoutubeVideosWrapper = styled.div`
 `
 
 const FeaturedLogosWrapper = styled.div`
-  margin-top: 150px;
-  margin-bottom: 60px;
+  @media (max-width: 450px) {
+  }
 `
 
-const SectionInfoWrapper = styled.div`
-  margin-top: 80px;
-`
+const SectionInfoWrapper = styled.div``
